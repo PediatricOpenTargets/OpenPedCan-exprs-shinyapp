@@ -51,7 +51,7 @@ Input:
 
 Input files used are:
 
-1. Expression matrix: `input/gene-expression-rsem-tpm-collapsed-subset.rds` which is a subset of gene-expression-rsem-tpm-collapsed.rds created using `code/subset_data.R`
+1. Expression matrix: `input/gene-expression-rsem-tpm-collapsed-subset.rds` which is a subset of gene-expression-rsem-tpm-collapsed.rds created using ``code/subset_data.R``
 2. Histologies file: `input/histologies.tsv`
 
 Output:
