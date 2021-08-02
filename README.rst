@@ -51,8 +51,10 @@ Input:
 
 Input files used are:
 
-1. Expression matrix: ``input/gene-expression-rsem-tpm-collapsed-subset.rds`` which is a subset of gene-expression-rsem-tpm-collapsed.rds created using ``code/subset_data.R``
+1. Expression matrix: ``input/gene-expression-rsem-tpm-collapsed-subset.rds`` which is a subset of gene-expression-rsem-tpm-collapsed.rds created using ``code/subset_data.R`` for testing purposes.
 2. Histologies file: ``input/histologies.tsv``
+   
+The input files can be downloaded by cloning this repo and running the download script: https://github.com/PediatricOpenTargets/OpenPedCan-analysis
 
 Output:
 =======
