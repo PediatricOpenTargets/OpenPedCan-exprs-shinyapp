@@ -27,8 +27,6 @@ Structure
 	│   ├── tumor_vs_normal_plot.R
 	│   └── viewDataTable.R
 	├── README.rst
-	├── code
-	│   └── subset_data.R 
 	├── data
 	│   ├── efo-mondo-map.tsv 
 	│   ├── ensg-hugo-rmtl-mapping.tsv 
@@ -42,11 +40,10 @@ Structure
 Functions:
 ==========
 
-1. **code/subset_data.R**: This script is to subset the original expression matrix to a smaller subset for mock application.
-2. **R/viewDataTable.R**: ``DT::datatable`` with various add-on, buttons etc
-3. **R/pubTheme.R**: ggplot2 publication quality themes
-4. **R/pan_cancer_plot.R**: function for pan-cancer plots
-5. **R/tumor_vs_normal_plot.R**: function for tumor vs normal plots
+1. **R/viewDataTable.R**: ``DT::datatable`` with various add-on, buttons etc
+2. **R/pubTheme.R**: ggplot2 publication quality themes
+3. **R/pan_cancer_plot.R**: function for pan-cancer plots
+4. **R/tumor_vs_normal_plot.R**: function for tumor vs normal plots
 
 Input:
 ======
