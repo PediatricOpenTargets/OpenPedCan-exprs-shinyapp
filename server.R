@@ -1,6 +1,7 @@
+# source functions
 source('R/pubTheme.R')
 source('R/viewDataTable.R')
-source('R/tumor_plot.R')
+source('R/pan_cancer_plot.R')
 source('R/tumor_vs_normal_plot.R')
 
 # Get `magrittr` pipe
@@ -10,6 +11,10 @@ source('R/tumor_vs_normal_plot.R')
 expr_mat <- readRDS('data/gene-expression-rsem-tpm-collapsed-subset.rds')
 genes <- unique(rownames(expr_mat))
 hist_file <- read.delim('data/histologies.tsv', stringsAsFactors = F)
+ensg_hugo_rmtl_mapping <- read.delim('data/ensg-hugo-rmtl-mapping.tsv') %>%
+  unique()
+efo_mondo_map <- read.delim('data/efo-mondo-map.tsv') %>%
+  unique()
 
 shinyServer(function(input, output, session){
   
@@ -56,16 +61,11 @@ shinyServer(function(input, output, session){
         select(hist_file_subset$Kids_First_Biospecimen_ID) %>%
         tibble::rownames_to_column('gene')
       
-      res2 <<- tumor_plot(expr_mat_gene = expr_mat_subset,
+      res2 <<- pan_cancer_plot(expr_mat_gene = expr_mat_subset,
                           hist_file = hist_file_subset, 
+                          efo_mondo_map, ensg_hugo_rmtl_mapping,
                           analysis_type = input$analysis_type_2,
                           log = input$log_val_2)
-      
-      # render pdf view
-      output$boxplot_pdf_2 <- renderUI({
-        tags$iframe(style="height:600px; width:100%; scrolling=yes", 
-                    src = res2$output_plot_fname)
-      })
     })
   })
   
@@ -114,16 +114,11 @@ shinyServer(function(input, output, session){
       
       res1 <<- tumor_vs_normal_plot(expr_mat_gene = expr_mat_subset,
                                     hist_file = hist_file_subset, 
+                                    efo_mondo_map, ensg_hugo_rmtl_mapping,
                                     analysis_type = input$analysis_type_1,
                                     cohorts = cohorts,
                                     cancer_group_name = input$select_histology_1,
                                     log = input$log_val_1)
-      
-      # render pdf view
-      output$boxplot_pdf_1 <- renderUI({
-        tags$iframe(style="height:600px; width:100%; scrolling=yes", 
-                    src = res1$output_plot_fname)
-      })
     })
   })
   

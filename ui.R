@@ -1,11 +1,15 @@
-suppressPackageStartupMessages(library(shiny))
-suppressPackageStartupMessages(library(shinydashboard))
-suppressPackageStartupMessages(library(shinyjs))
-suppressPackageStartupMessages(library(plotly))
-suppressPackageStartupMessages(library(DT))
-suppressPackageStartupMessages(library(shinyWidgets))
-suppressPackageStartupMessages(library(tidyverse))
-suppressPackageStartupMessages(library(dplyr))
+# load libraries
+suppressPackageStartupMessages({
+  library(shiny)
+  library(shinydashboard)
+  library(shinyjs)
+  library(plotly)
+  library(DT)
+  library(shinyWidgets)
+  library(tidyverse)
+  library(dplyr)
+})
+
 
 dashboardPage(
   
@@ -53,7 +57,6 @@ dashboardPage(
               ),
               tabsetPanel(type = "tabs",
                           tabPanel(title = "Plot", div(style="overflow-x: scroll; overflow-y: scroll", plotlyOutput("boxplot_1", width = "100%", height = 800))),
-                          tabPanel(title = "Plot (PDF)", uiOutput("boxplot_pdf_1")),
                           tabPanel(title = "Table", div(style="overflow-x: scroll; overflow-y: scroll", DT::dataTableOutput("table_1")))
               )
       ),
@@ -72,7 +75,6 @@ dashboardPage(
               ),
               tabsetPanel(type = "tabs",
                           tabPanel(title = "Plot", div(style="overflow-x: scroll; overflow-y: scroll", plotlyOutput("boxplot_2", width = "80%", height = 800))),
-                          tabPanel(title = "Plot (PDF)", uiOutput("boxplot_pdf_2")),
                           tabPanel(title = "Table", div(style="overflow-x: scroll; overflow-y: scroll", DT::dataTableOutput("table_2")))
               )
       )
