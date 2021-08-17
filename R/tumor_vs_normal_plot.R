@@ -1,4 +1,4 @@
-# plot/table of each cohort + cancer_group vs GTEx subgroups
+# plot/table for tumor vs normal plots
 suppressPackageStartupMessages({
   library(tidyr)
   library(dplyr)

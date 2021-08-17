@@ -1,4 +1,4 @@
-# plot/table of each cohort + cancer_group or cancer_group
+# plot/table for pan-cancer plots
 suppressPackageStartupMessages({
   library(tidyr)
   library(dplyr)
