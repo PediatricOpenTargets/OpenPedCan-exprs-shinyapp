@@ -155,7 +155,7 @@ pan_cancer_plot <- function(expr_mat_gene, hist_file,
     }
   }
   
+  # return plot and table
   return(list(output_plot = output_plot,
-              output_plot_fname = plot_fname,
               output_table = output_table))
 }
