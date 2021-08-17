@@ -8,7 +8,7 @@ source('R/tumor_vs_normal_plot.R')
 `%>%` <- dplyr::`%>%`
 
 # global data read each session
-expr_mat <- readRDS('data/gene-expression-rsem-tpm-collapsed-subset.rds')
+expr_mat <- readRDS('data/gene-expression-rsem-tpm-collapsed.rds')
 genes <- unique(rownames(expr_mat))
 hist_file <- read.delim('data/histologies.tsv', stringsAsFactors = F)
 ensg_hugo_rmtl_mapping <- read.delim('data/ensg-hugo-rmtl-mapping.tsv') %>%
